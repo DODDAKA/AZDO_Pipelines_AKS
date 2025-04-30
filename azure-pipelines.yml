@@ -17,13 +17,13 @@ steps:
 - task: Maven@3
   displayName: 'Maven Test'
   inputs:
-    mavenPomFile: '$(Parameters.mavenPOMFile)'
+    mavenPomFile: '$(mavenPOMFile)'
     goals: test
 
 - task: Maven@3
   displayName: 'Maven Package'
   inputs:
-    mavenPomFile: '$(Parameters.mavenPOMFile)'
+    mavenPomFile: '$(mavenPOMFile)'
 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
