@@ -39,3 +39,16 @@ steps:
     PathtoPublish: '$(build.artifactstagingdirectory)'
   condition: succeededOrFailed()
 
+- task: SonarSource.sonarqube.15B84CA1-B62F-4A2A-A403-89B77A063157.SonarQubePrepare@7
+  displayName: 'Prepare analysis on SonarQube Server'
+  inputs:
+    SonarQube: 'sonar-service-con'
+    scannerMode: cli
+    configMode: manual
+    cliProjectKey: Boardgame
+    cliProjectName: Boardgame
+    extraProperties: |
+     # Additional properties that will be passed to the scanner, 
+     # Put one key=value per line, example:
+     # sonar.exclusions=**/*.bin
+     sonar.java.binaries=.
