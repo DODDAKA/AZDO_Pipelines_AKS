@@ -52,3 +52,15 @@ steps:
      # Put one key=value per line, example:
      # sonar.exclusions=**/*.bin
      sonar.java.binaries=.
+
+- task: SonarSource.sonarqube.6D01813A-9589-4B15-8491-8164AEB38055.SonarQubeAnalyze@7
+  displayName: 'Run Code Analysis'
+
+- script: 'trivy fs --format table -o trivy-fs-report.html .'
+  displayName: 'Trivy FS Scam'
+
+- task: Docker@2
+  displayName: buildAndPush
+  inputs:
+    containerRegistry: acrserviceconnection
+    repository: dnkcontainerepo
