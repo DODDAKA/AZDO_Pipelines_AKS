@@ -40,12 +40,7 @@ steps:
     Contents: 'deployment-service.yaml'
     TargetFolder: '$(build.artifactstagingdirectory)'
   condition: succeededOrFailed()
-  
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
-  inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)'
-  condition: succeededOrFailed()
+
 
   
 - task: SonarSource.sonarqube.15B84CA1-B62F-4A2A-A403-89B77A063157.SonarQubePrepare@7
@@ -73,3 +68,15 @@ steps:
   inputs:
     containerRegistry: acrserviceconnection
     repository: dnkcontainerepo
+
+- task: replacetokens@6
+  inputs:
+    root: '$(System.DefaultWorkingDirectory)'
+    sources: 'deployment-service.yaml'
+    tokenPattern: 'doubleunderscores'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
