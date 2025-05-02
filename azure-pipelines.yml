@@ -33,13 +33,6 @@ steps:
     TargetFolder: '$(build.artifactstagingdirectory)'
   condition: succeededOrFailed()
 
-- task: CopyFiles@2
-  displayName: 'Copy K8S Manifest Files'
-  inputs:
-    SourceFolder: '$(system.defaultworkingdirectory)'
-    Contents: 'deployment-service.yaml'
-    TargetFolder: '$(build.artifactstagingdirectory)'
-  condition: succeededOrFailed()
 
 
   
@@ -74,6 +67,15 @@ steps:
     root: '$(System.DefaultWorkingDirectory)'
     sources: 'deployment-service.yaml'
     tokenPattern: 'doubleunderscores'
+
+
+- task: CopyFiles@2
+  displayName: 'Copy K8S Manifest Files'
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: 'deployment-service.yaml'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
