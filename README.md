@@ -28,5 +28,14 @@
 
 ![image](https://github.com/user-attachments/assets/87c786e9-8633-4925-9fd7-d5a7f012716e)
 
+![image](https://github.com/user-attachments/assets/6db1c51a-1514-44ff-81d0-09fa7e82db5f)
 
+Below one is the Frontend IP created on Kubernetes Standard Load Balancer
+
+![image](https://github.com/user-attachments/assets/773dde8a-f310-44d4-baba-c5ddd169df3e)
+
+
+Result: Browse with Public IP of K8S Load Balancer Front end IP
+
+![image](https://github.com/user-attachments/assets/e027ec89-af95-432d-b95b-d6b0822cc484)
 
