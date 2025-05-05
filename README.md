@@ -1,4 +1,7 @@
 ### Deploy Maven Application to AKS using Azure DevOps Pipelines ###
+### Self Hosted Agent
+
+![image](https://github.com/user-attachments/assets/d87816e1-4810-43a2-adb9-daadbac0f05e)
 
 ### After successful build using pipelines, it will generate Build Artifact ###
 
