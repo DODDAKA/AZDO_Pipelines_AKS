@@ -9,6 +9,14 @@
 ![image](https://github.com/user-attachments/assets/60fafceb-0cd1-46df-8950-0603877d292d)
 
 
+### Self hosted Agnet and configured Sonar Qube self hosted Agent itself
+![image](https://github.com/user-attachments/assets/b83b3edb-af7d-4180-83d8-c7afaadd49d0)
+
+
+### Sonar Qube Results
+![image](https://github.com/user-attachments/assets/ba15d3d7-7b1e-4d35-9340-b16935457637)
+
+
 ### Go to Releases and configure deploy pipeline using classic pipelines.
 ### Choose your Artifact and click on Add stages.
 
